@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Monochrome - Thực hành phối màu</title>
+  <style>
+    :root {
+      --blue-1: #0878B9;
+      --blue-2: #1698D4;
+      --blue-3: #42B5E8;
+      --blue-4: #70CCF2;
+      --blue-5: #A0DFF8;
+      --blue-6: #C6EAFB;
+      --blue-7: #E5F6FD;
+      --ink: #17232D;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--blue-7);
+      line-height: 1.6;
+    }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+    header { background: var(--blue-1); color: var(--white); }
+    .nav {
+      min-height: 76px; display: flex; align-items: center;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .brand { font-size: 1.35rem; font-weight: 800; letter-spacing: .4px; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { color: var(--white); text-decoration: none; font-weight: 700; }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      background: linear-gradient(135deg, var(--blue-1), var(--blue-3));
+      color: var(--white); padding: 78px 0 86px; text-align: center;
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: .82rem; font-weight: 700; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin: 14px 0; }
+    .hero p { max-width: 680px; margin: 0 auto 28px; font-size: 1.12rem; }
+    .button {
+      display: inline-block; padding: 12px 22px; border-radius: 8px;
+      background: var(--white); color: var(--blue-1); font-weight: 800;
+      text-decoration: none; box-shadow: 0 5px 15px #003b5d30;
+    }
+    section { padding: 64px 0; }
+    .section-title { text-align: center; margin: 0 0 12px; font-size: clamp(1.7rem, 3vw, 2.5rem); }
+    .section-intro { max-width: 680px; margin: 0 auto 32px; text-align: center; color: #43525d; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 24px #173e5215; border: 1px solid var(--blue-6);
+    }
+    .card-color { height: 125px; }
+    .card-body { padding: 22px; }
+    .card h3 { margin: 0 0 8px; }
+    .tag {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      background: var(--blue-6); color: var(--blue-1); font-size: .82rem; font-weight: 800;
+    }
+    .palette { background: var(--white); }
+    .swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+    .swatch { border-radius: 10px; overflow: hidden; border: 1px solid #d9e6eb; background: white; }
+    .swatch-color { height: 100px; }
+    .swatch-code { padding: 10px 4px; text-align: center; font-size: .78rem; font-weight: 800; }
+    .feature-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feature {
+      background: var(--blue-6); padding: 24px; border-radius: 14px;
+    }
+    .feature strong { display: block; margin-bottom: 6px; font-size: 1.05rem; }
+    .cta { background: var(--blue-2); color: var(--white); text-align: center; }
+    .cta .section-intro { color: var(--white); }
+    footer { background: var(--blue-1); color: var(--white); padding: 28px 0; text-align: center; }
+    footer p { margin: 4px 0; }
+    @media (max-width: 760px) {
+      .nav { padding: 16px 0; justify-content: center; }
+      nav { justify-content: center; gap: 14px; }
+      .cards, .feature-list { grid-template-columns: 1fr; }
+      .swatches { grid-template-columns: repeat(2, 1fr); }
+      .swatch-color { height: 75px; }
+      section { padding: 46px 0; }
+    }
+    @media (min-width: 500px) and (max-width: 760px) {
+      .cards, .feature-list { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">MONOCHROME<span style="color:#C6EAFB">.</span></div>
+      <nav aria-label="Điều hướng chính">
+        <a href="#about">Giới thiệu</a>
+        <a href="#palette">Bảng màu</a>
+        <a href="#features">Ưu điểm</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="container">
+        <div class="eyebrow">Thực hành phối màu đơn tông</div>
+        <h1>Một màu chủ đạo,<br>nhiều sắc thái</h1>
+        <p>Giao diện minh họa cách sử dụng các sắc độ xanh dương từ đậm đến nhạt để tạo cảm giác hiện đại, thống nhất và dễ đọc trên mọi thiết bị.</p>
+        <a class="button" href="#palette">Khám phá bảng màu</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Thiết kế hài hòa, dễ sử dụng</h2>
+        <p class="section-intro">Phối màu đơn tông sử dụng một màu chính cùng các sắc độ khác nhau. Màu trắng và chữ tối được dùng để cân bằng độ tương phản.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-color" style="background:var(--blue-1)"></div>
+            <div class="card-body"><span class="tag">Màu bậc 1</span><h3>Xanh dương đậm</h3><p>Dành cho header, footer và các thành phần cần tạo điểm nhấn rõ ràng.</p></div>
+          </article>
+          <article class="card">
+            <div class="card-color" style="background:var(--blue-3)"></div>
+            <div class="card-body"><span class="tag">Màu bậc 3</span><h3>Xanh dương sáng</h3><p>Dùng cho vùng nổi bật, nút bấm hoặc nền chuyển sắc ở khu vực giới thiệu.</p></div>
+          </article>
+          <article class="card">
+            <div class="card-color" style="background:var(--blue-6)"></div>
+            <div class="card-body"><span class="tag">Màu bậc 6</span><h3>Xanh rất nhạt</h3><p>Phù hợp làm nền phụ, giúp nội dung thoáng và không gây rối mắt.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="palette" id="palette">
+      <div class="container">
+        <h2 class="section-title">Bảng màu đơn tông</h2>
+        <p class="section-intro">Bảy sắc độ xanh dương được dùng xuyên suốt trang. Mã HEX được ghi dưới từng ô màu để dễ áp dụng vào CSS.</p>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#0878B9"></div><div class="swatch-code">#0878B9</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#1698D4"></div><div class="swatch-code">#1698D4</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#42B5E8"></div><div class="swatch-code">#42B5E8</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#70CCF2"></div><div class="swatch-code">#70CCF2</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#A0DFF8"></div><div class="swatch-code">#A0DFF8</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#C6EAFB"></div><div class="swatch-code">#C6EAFB</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#E5F6FD"></div><div class="swatch-code">#E5F6FD</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title">Nguyên tắc phối màu</h2>
+        <p class="section-intro">Màu sắc được phân chia theo vai trò để giao diện vừa đẹp mắt vừa dễ sử dụng.</p>
+        <div class="feature-list">
+          <div class="feature"><strong>01. Thống nhất</strong>Dùng cùng một họ màu xanh dương trên toàn bộ trang.</div>
+          <div class="feature"><strong>02. Tương phản</strong>Chữ tối trên nền sáng giúp nội dung dễ đọc hơn.</div>
+          <div class="feature"><strong>03. Responsive</strong>Bố cục tự điều chỉnh phù hợp với máy tính bảng và điện thoại.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2 class="section-title">Hãy thử phối màu của riêng bạn</h2>
+        <p class="section-intro">Thay đổi các biến màu trong phần :root của CSS để thử những sắc độ khác nhau.</p>
+        <a class="button" href="#about">Quay lại đầu trang</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>MONOCHROME.</strong> — Bài thực hành sử dụng màu sắc trong trang web</p>
+      <p>HTML • CSS • Responsive Design</p>
+    </div>
+  </footer>
+</body>
+</html>
